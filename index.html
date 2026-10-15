@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini AI Chatbot - Sesi 3</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-wrapper">
+    <div class="chat-container">
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="header-left">
+          <div class="bot-avatar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L14.4 7.2L20 8.2L16 12.3L17 18L12 15.2L7 18L8 12.3L4 8.2L9.6 7.2L12 2Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Gemini Assistant</h1>
+            <span class="status-badge" id="status-badge">
+              <span class="dot"></span> Online (Gemini 2.5 Flash)
+            </span>
+          </div>
+        </div>
+        <button id="clear-btn" class="header-action-btn" title="Hapus Riwayat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+          </svg>
+        </button>
+      </header>
+
+      <!-- API Key Notice Banner (Muncul jika belum ada key) -->
+      <div id="key-warning" class="warning-banner" style="display: none;">
+        <span>⚠️ <strong>Gemini API Key belum diisi</strong> di file <code>.env</code>. <a href="https://aistudio.google.com/app/apikey" target="_blank">Dapatkan gratis di sini</a></span>
+      </div>
+
+      <!-- Chat Box Area -->
+      <main id="chat-box" class="chat-box">
+        <div class="welcome-card">
+          <div class="welcome-icon">👋</div>
+          <h3>Halo! Ada yang bisa saya bantu?</h3>
+          <p>Saya asisten AI berbasis <strong>Google Gemini 2.5 Flash</strong>. Tanyakan apa saja!</p>
+          <div class="sample-prompts">
+            <button class="chip" data-prompt="Jelaskan cara kerja API AI secara singkat">"Cara kerja API AI"</button>
+            <button class="chip" data-prompt="Buatkan rekomendasi rencana perjalanan 3 hari di Bali">"Rencana liburan Bali 3 hari"</button>
+            <button class="chip" data-prompt="Apa bedanya temperature, top_p, dan top_k pada Gemini?">"Parameter Gemini"</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Input Form -->
+      <footer class="chat-footer">
+        <form id="chat-form">
+          <input 
+            type="text" 
+            id="user-input" 
+            placeholder="Ketik pesan Anda di sini..." 
+            autocomplete="off" 
+            required 
+          />
+          <button type="submit" id="send-btn" title="Kirim Pesan">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
